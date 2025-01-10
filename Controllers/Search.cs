@@ -23,7 +23,6 @@ namespace Webapi.Controllers {
             _logger = logger;
         }
 
-        // GET api/search/getitems
         [HttpGet]
         [Route("getitems")]
 
@@ -33,9 +32,9 @@ namespace Webapi.Controllers {
                 .Include(p => p.ProductCategory)
                 .Include(p => p.ProductData)
                 .Include(p => p.ProductImage)
-                .Include(p => p.ProductReviews) // Ensure ProductReview includes ProductID
+                .Include(p => p.ProductReviews)
                 .Include(p => p.ProductTag)
-                .Include(p => p.Account) // If Account is a related entity of Product
+                .Include(p => p.Account)
                 .Include(p => p.ProductDetails)
                 .Where(p => p.ProductDetails
                     .ProductName
