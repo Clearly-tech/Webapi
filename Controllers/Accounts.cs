@@ -9,7 +9,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Webapi.shared;
-using Webapi.shared.DTOs; // Ensure this namespace is included
+using Webapi.shared.DTOs;
 
 namespace Webapi.Controllers
 {
