@@ -61,7 +61,6 @@ namespace Webapi.Controllers {
             return Ok(JsonConvert.SerializeObject(role));
         }
 
-        // Delete role
         [HttpDelete("Delete/{id}")]
         public ActionResult Delete(int id)
         {
