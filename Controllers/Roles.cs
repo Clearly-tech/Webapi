@@ -19,7 +19,6 @@ namespace Webapi.Controllers {
             _logger = logger;
         }
 
-        // Read all roles
         [HttpGet("Get")]
         public ActionResult Get()
         {
@@ -27,7 +26,6 @@ namespace Webapi.Controllers {
             return roles.Count() == 0 ? NotFound() : Ok(JsonConvert.SerializeObject(roles));
         }
 
-        // Read role by id
         [HttpGet("Get/{id}")]
         public ActionResult Get(int id)
         {
@@ -41,7 +39,6 @@ namespace Webapi.Controllers {
             return role == null ? NotFound() : Ok(JsonConvert.SerializeObject(role));
         }
 
-        // Create a new role
         [HttpPost("Post")]
         public ActionResult Post([FromBody] Roles role)
         {
@@ -49,8 +46,7 @@ namespace Webapi.Controllers {
             _context.SaveChanges();
             return Ok(JsonConvert.SerializeObject(role));
         }
-
-        // Update role
+        
         [HttpPut("Put/{id}")]
         public ActionResult Put(int id, [FromBody] Roles role)
         {
