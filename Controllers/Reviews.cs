@@ -35,7 +35,7 @@ namespace Webapi.Controllers
 		{
 			_logger.LogInformation("Getting review with ID: {id}", id);
 			var review = await _context.Review.Include(r => r.Account)
-											   .FirstOrDefaultAsync(r => r.ReviewID == id);
+				.FirstOrDefaultAsync(r => r.ReviewID == id);
 
 			if (review == null)
 			{
