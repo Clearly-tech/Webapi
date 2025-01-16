@@ -27,11 +27,11 @@ namespace Webapi.Controllers
 		{
 			try
 			{
-				// Handle invalid limit values
+				
 				if (limit <= 0)
 				{
 					_logger.LogInformation("Getting all products without limit.");
-					// Get limited number of products
+
 					var products = await _context.Product
 						.Include(p => p.ProductData)
 						.Include(p => p.ProductDetails)
@@ -66,12 +66,12 @@ namespace Webapi.Controllers
 						return NotFound("No products found.");
 					}
 
-					return Ok(JsonConvert.SerializeObject(products)); // Directly return the products
+					return Ok(JsonConvert.SerializeObject(products)); 
 				}
 				else
 				{
 					_logger.LogInformation($"Getting {limit} products.");
-					// Get limited number of products
+
 					var products = await _context.Product
 						.Include(p => p.ProductData)
 						.Include(p => p.ProductDetails)
@@ -107,7 +107,7 @@ namespace Webapi.Controllers
 						return NotFound("No products found.");
 					}
 
-					return Ok(JsonConvert.SerializeObject(products)); // Directly return the products
+					return Ok(JsonConvert.SerializeObject(products)); 
 				}
 			}
 			catch (Exception ex)
@@ -149,7 +149,7 @@ namespace Webapi.Controllers
                             CategoryIcon = p.ProductCategory.CategoryIcon,
                             CategoryName = p.ProductCategory.CategoryName
                         })
-						.FirstOrDefaultAsync(p => p.ProductID == id);
+			.FirstOrDefaultAsync(p => p.ProductID == id);
 
 			if (product == null)
 			{
@@ -233,7 +233,7 @@ namespace Webapi.Controllers
 					CategoryId = c.ProductCategoryID,
 					CategoryName = c.CategoryName,
 					CategoryIcon = c.CategoryIcon,
-					ProductCount = c.Products.Count() // Count products in each category
+					ProductCount = c.Products.Count() 
 				})
 				.Take(limit)
 				.ToListAsync();
