@@ -240,7 +240,7 @@ namespace Webapi.Controllers
         public IEnumerable<orderDto>? OrdersACC { get; set; }
     }
 
-    public class UserDto // DTO for returning user information
+    public class UserDto 
     {
         public string Id { get; set; }
         public string UserName { get; set; }
