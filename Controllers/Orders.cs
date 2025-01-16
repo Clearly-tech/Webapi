@@ -74,7 +74,7 @@ namespace Webapi.Controllers
                         Quantity = od.Quantity,
                         TotalPrice = od.TotalPrice,
                         ProductID = od.ProductID,
-                        ProductName = od.Product.ProductDetails.ProductName // Include product name if needed
+                        ProductName = od.Product.ProductDetails.ProductName
                     }).ToList()
                 })
                 .ToListAsync();
@@ -107,7 +107,7 @@ namespace Webapi.Controllers
                         Quantity = od.Quantity,
                         TotalPrice = od.TotalPrice,
                         ProductID = od.ProductID,
-                        ProductName = od.Product.ProductDetails.ProductName // Include product name if needed
+                        ProductName = od.Product.ProductDetails.ProductName
                     }).ToList()
                 })
                 .FirstOrDefaultAsync();
