@@ -220,7 +220,7 @@ namespace Webapi.Controllers
         [Compare("Password", ErrorMessage = "Passwords do not match.")]
         public string ConfirmPassword { get; set; }
 
-        public string PhoneNumber { get; set; } // Added phone number to the model
+        public string PhoneNumber { get; set; }
     }
 
     public class LoginModel
